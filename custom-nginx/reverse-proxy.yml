@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reverse-proxy-depl
+spec:
+  selector:
+    matchLabels:
+      app: reverse-proxy-depl
+  template:
+    metadata:
+      labels:
+        app: reverse-proxy-depl
+    spec:
+      containers:
+      - name: reverse-proxy-depl
+        image: callspadeoz123/nginx-reverse-proxy:v2.1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 8080
