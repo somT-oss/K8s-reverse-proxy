@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: backend
-  type: ClusterIP
+  type: NodePort
   ports:
   - port: 5000
-    targetPort: 5000
+    targetPort: 30000
